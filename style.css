@@ -1,0 +1,50 @@
+body{
+    position: relative;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+section{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.odd{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    background-color: darkgreen;
+}
+
+.even{
+    grid-area: 2/2/3/3;
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+}
+
+.touitText{
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    margin: 1rem;
+}
