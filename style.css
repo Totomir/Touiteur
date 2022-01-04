@@ -1,11 +1,18 @@
 body{
     position: relative;
+    background-image: url(images/beautiful-shining-stars-night-sky.jpg);
+    background-size: contain;
 }
 
 header{
     display: flex;
     justify-content: space-between;
     margin: 1.5rem;
+}
+
+.logo{
+    width: 15%;
+    height: 15%;
 }
 
 nav{
