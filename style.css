@@ -11,36 +11,58 @@ header{
 nav{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+
+.inputTouit{
+    width: 60rem;
+}
+
+.submitButton{
+    max-height: 5rem;
+    max-width: 5rem;
+    border-radius: 25px;
+    padding: 1rem;
+    background-color: rgb(187, 187, 187);
+    border: 1px solid black;
 }
 
 section{
     margin-top: 5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-section{
     display: grid;
+    row-gap: 5rem;
     grid-template-columns: 50% 50%;
 }
 
 .odd{
     display: flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: darkgreen;
 }
 
 .even{
     grid-area: 2/2/3/3;
     display: flex;
-    justify-content: space-between;
+    text-align: center;
+    justify-content: space-around;
     background-color: yellow;
 }
 
 .touitText{
+    width: 80%;
+    height: auto;
     border: 2px solid black;
     border-radius: 20px;
+}
+
+.touitosLogo{
+    width: 5rem;
+    height: 5rem;
+    padding: 0.5rem;
+    border-radius: 25px;
+    background-color: black;
+
 }
 
 footer{
