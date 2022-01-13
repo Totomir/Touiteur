@@ -2,7 +2,7 @@ body{
     position: relative;
     background-image: url(images/beautiful-shining-stars-night-sky_resultat.webp);
     background-size: contain;
-    font-family: sans-serif;
+    font-family: 'Bahnschrift';
     outline: solid red;
 }
 
@@ -34,6 +34,7 @@ nav{
 }
 
 .pseudo{
+    font-size: 2rem;
     color: #979797;
 }
 
@@ -44,7 +45,7 @@ nav{
 }
 
 .inputTouit{
-    min-width: 25rem;
+    min-width: 30rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-radius: 25px;
