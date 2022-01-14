@@ -20,8 +20,8 @@ touitForm.addEventListener('submit', function(ev) {
     touitosImg.alt = "Profil photo of AstroTouitos";
 
     touitosLogo.appendChild(touitosImg);
-    touit.appendChild(touitosLogo);
     touit.appendChild(touitText);
+    touit.appendChild(touitosLogo);
     touitSection.appendChild(touit);
 
     touitForm.reset();
