@@ -9,6 +9,7 @@ touitForm.addEventListener('submit', function(ev) {
     touit.classList.add("even");
 
     const touitText = document.createElement("p");
+    touitText.classList.add("touitText");
     touitText.textContent = touitForm["inputTouit"].value;
 
     const touitosLogo = document.createElement("picture");
@@ -21,13 +22,14 @@ touitForm.addEventListener('submit', function(ev) {
     touitosLogo.appendChild(touitosImg);
     touit.appendChild(touitosLogo);
     touit.appendChild(touitText);
+    touitSection.appendChild(touit);
 
     touitForm.reset();
 });
 
 
 // <div class="even">
-//     <div class="touitText"><p>Petit Touit de l'espace</p></div>
+//     <p class="touitText">Petit Touit de l'espace</p>
 //     <picture class="touitosLogo">
 //         <img src="images/dog.png" alt="Profil photo of AstroTouitos">
 //     </picture>
