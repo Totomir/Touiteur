@@ -19,10 +19,10 @@
     </header>
     <main>
         <nav>
-            <h2 class="pseudo">Totomir</h2>
+            <input class="pseudo" id="pseudo" placeholder="Pseudo" maxlength="16"></input>
             <div class="message">
                 <form class="form-twouit">
-                    <input class="inputTouit" name="inputTouit" type="text" placeholder="Ca twouit ou quoi là ?">
+                    <input class="inputTouit" name="inputTouit" type="text" placeholder="Ca twouit ou quoi là ?" maxlength="256">
                 </form>
                 <button class="submitButton" id="submitButton" type="submit">
                     <img src="images/startup.png" alt="Submit button">
@@ -33,27 +33,12 @@
             <article class="touitSection" id="touitSection">
                 <div class="odd">
                     <p class="touitText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aut numquam omnis dolorem nemo? Fugiat consequuntur quod iusto dolores praesentium </p>
-                    <picture class="touitosLogo">
-                        <img src="images/alien.png" alt="Profil photo of AstroTouitos">
-                    </picture>
-                </div>
-                <div class="even">
-                    <p class="touitText">Petit Touit de l'espace</p>
-                    <picture class="touitosLogo">
-                        <img src="images/dog.png" alt="Profil photo of AstroTouitos">
-                    </picture>
-                </div>
-                <div class="odd">
-                    <p class="touitText">Whoof</p>
-                    <picture class="touitosLogo">
-                        <img src="images/dog.png" alt="Profil photo of AstroTouitos">
-                    </picture>
-                </div>
-                <div class="even">
-                    <p class="touitText">ETVEZZCZC zdzczsx ZFZCZSV SFD zczx ZCCZEG</p>
-                    <picture class="touitosLogo">
-                        <img src="images/alien.png" alt="Profil photo of AstroTouitos">
-                    </picture>
+                    <div class="authorProfile">
+                        <picture class="touitosLogo">
+                            <img src="images/alien.png" alt="Profil photo of AstroTouitos">
+                        </picture>
+                        <div class="author">Alien</div>
+                    </div>
                 </div>
             </article>
             <article class="topTouitSection">
