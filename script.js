@@ -53,16 +53,21 @@ function addTouit(msg, auth) {
 // });
 // request.send();
 
-const request2 = new XMLHttpRequest();
-request2.open("POST", "http://touiteur.cefim-formation.org/send", true);
-request2.addEventListener("click", function () {
-  if (request2.readyState === XMLHttpRequest.DONE) {
-    const response = JSON.parse(request2.responseText);
-    console.log(response);
-    const object = response.messages;
-    let msg = touitForm["inputTouit"].value;
-    let auth = profil.value;
-    addTouit(msg, auth);
-  }
+submitButton.addEventListener("click", function () {
+  let name;
+
+  message = touitForm["inputTouit"].value;
+  name = profil.value;
+
+  const request2 = new XMLHttpRequest();
+  request2.open("POST", "http://touiteur.cefim-formation.org/send", true);
+  request2.addEventListener("readystatechange", function () {
+    if (request2.readyState === XMLHttpRequest.DONE) {
+      const response = JSON.parse(request2.responseText);
+      console.log(response);
+    }
+  });
+  request2.send();
+
+  touitForm.reset();
 });
-request2.send();
