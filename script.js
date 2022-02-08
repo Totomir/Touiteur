@@ -56,27 +56,32 @@ function addTouit(msg, auth) {
 submitButton.addEventListener("click", function () {
   let name;
 
-  message = touitForm["inputTouit"].value;
-  name = profil.value;
+  touit = touitForm["inputTouit"].value;
+  pseudo = profil.value;
 
+  console.log(touit);
+  console.log(pseudo);
   const request2 = new XMLHttpRequest();
-  request2.load = success;
-  request2.error = error;
+  const params = "message=touit&name=pseudo";
   request2.open("POST", "http://touiteur.cefim-formation.org/send", true);
+  request2.setRequestHeader(
+    "Content-type",
+    "application/x-www-form-urlencoded"
+  );
+  request2.setRequestHeader("Content-lenght", params.length);
+  request2.setRequestHeader("Connection", "close");
   request2.addEventListener("readystatechange", function () {
     if (request2.readyState === XMLHttpRequest.DONE) {
       return;
     }
     if (request2.status == 200) {
-      const response = JSON.parse(request2.responseText);
-      console.log(response);
+      return;
     }
   });
-  request2.send(JSON.stringify({
-    message = message,
-    name = name
-  })
-  );
+  request2.send(params);
 
   touitForm.reset();
 });
+
+// envoyer des parametres dans le corps de la requete*
+// et trouver dans quelle langage on va ecrire ses parametre (url encording)
