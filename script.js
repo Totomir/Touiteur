@@ -60,14 +60,23 @@ submitButton.addEventListener("click", function () {
   name = profil.value;
 
   const request2 = new XMLHttpRequest();
+  request2.load = success;
+  request2.error = error;
   request2.open("POST", "http://touiteur.cefim-formation.org/send", true);
   request2.addEventListener("readystatechange", function () {
     if (request2.readyState === XMLHttpRequest.DONE) {
+      return;
+    }
+    if (request2.status == 200) {
       const response = JSON.parse(request2.responseText);
       console.log(response);
     }
   });
-  request2.send();
+  request2.send(JSON.stringify({
+    message = message,
+    name = name
+  })
+  );
 
   touitForm.reset();
 });
