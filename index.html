@@ -1,82 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/helpers.css">
-    <link rel="stylesheet" href="CSS/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="CSS/helpers.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <title>Touiteur</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img src="images/Lune.png" alt="Touiteur's logo" class="logo">
-        <div class="buttons">
-            <a href="" class="loginButton">Connexion</a>
-            <a href="" class="signinButton">Inscription</a>
-        </div>
+      <img src="images/Lune.png" alt="Touiteur's logo" class="logo" />
+      <div class="buttons">
+        <a href="" class="loginButton">Connexion</a>
+        <a href="" class="signinButton">Inscription</a>
+      </div>
     </header>
     <main>
-        <nav>
-            <input class="pseudo" id="pseudo" placeholder="Pseudo" maxlength="16"></input>
-            <div class="message">
-                <form class="form-twouit">
-                    <input class="inputTouit" name="inputTouit" type="text" placeholder="Ca twouit ou quoi là ?" maxlength="256">
-                </form>
-                <button class="submitButton" id="submitButton" type="submit">
-                    <img src="images/startup.png" alt="Submit button">
-                </button>
+      <nav>
+        <form id="touitForm">
+          <div class="message">
+            <label for="pseudo"></label>
+            <input
+              id="pseudo"
+              class="pseudo"
+              name="username"
+              maxlength="16"
+              placeholder="Pseudo"
+              type="text"
+            />
+            <label for="inputTouit"></label>
+            <input
+              class="inputTouit"
+              id="inputTouit"
+              name="message"
+              maxlength="256"
+              placeholder="Ca touit ou quoi là ?"
+              type="text"
+            />
+            <button class="submitButton" id="submitButton" type="submit">
+              <img src="images/startup.png" alt="Submit button" />
+            </button>
+          </div>
+        </form>
+      </nav>
+      <section>
+        <article class="touitSection" id="touitSection"></article>
+        <article class="topTouitSection">
+          <h2>TouitSpacer of the universe !</h2>
+          <div class="topTouitTable">
+            <div class="trendingWord">
+              <p>Test</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
+              <p>blah</p>
             </div>
-        </nav>
-        <section>
-            <article class="touitSection" id="touitSection">
-            </article>
-            <article class="topTouitSection">
-                <h2>TouitSpacer of the universe !</h2>
-                <div class="topTouitTable">
-                    <div class="trendingWord">
-                        <p>Test</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                        <p>blah</p>
-                    </div>
-                    <div class="topTouitSpacer">
-                        <picture class="touitosLogo">
-                            <img src="images/dog.png" alt="Profil photo of AstroTouitos">
-                        </picture>
-                        <p class="touitSpacer">Dogstonaute</p>
-                    </div>
-                    <div class="topTouitSpacer">
-                        <picture class="touitosLogo">
-                            <img src="images/alien.png" alt="Profil photo of AstroTouitos">
-                        </picture>
-                        <p class="touitSpacer">Alien</p>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <footer>
-            <div class="credit">
-                Page réalisé par Thomas MIRAULT
+            <div class="topTouitSpacer">
+              <picture class="touitosLogo">
+                <img src="images/dog.png" alt="Profil photo of AstroTouitos" />
+              </picture>
+              <p class="touitSpacer">Dogstonaute</p>
             </div>
-        </footer>
+            <div class="topTouitSpacer">
+              <picture class="touitosLogo">
+                <img
+                  src="images/alien.png"
+                  alt="Profil photo of AstroTouitos"
+                />
+              </picture>
+              <p class="touitSpacer">Alien</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <footer>
+        <div class="credit">Page réalisé par Thomas MIRAULT</div>
+      </footer>
     </main>
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

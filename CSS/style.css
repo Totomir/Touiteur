@@ -91,12 +91,13 @@ nav {
   font-size: 1.5rem;
   color: #979797;
   border-radius: 20px;
+  margin-bottom: 1rem;
 }
 
 .message {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .inputTouit {
@@ -107,6 +108,8 @@ nav {
 }
 
 .submitButton {
+  margin-left: 1rem;
+  margin-top: 1rem;
   max-height: 5rem;
   max-width: 5rem;
   border-radius: 25px;
@@ -117,7 +120,7 @@ nav {
 
 @media screen and (min-width: 36em) {
   nav {
-    width: 70%;
+    width: 100%;
     margin-left: 5%;
     margin-right: 0;
   }
@@ -125,25 +128,16 @@ nav {
 
 @media screen and (min-width: 48em) {
   nav {
-    width: 50%;
-    margin-left: 5%;
-    margin-right: 0;
+    width: 70%;
   }
 
-  .submitButton {
-    margin-right: 5rem;
-  }
-}
-
-@media screen and (min-width: 62em) {
-  nav {
-    width: 40%;
-    margin-left: 5%;
-    margin-right: 0;
+  .pseudo {
+    margin-bottom: 0.25rem;
+    margin-right: 2rem;
   }
 
-  .submitButton {
-    margin-right: 15rem;
+  .inputTouit {
+    margin-right: 2rem;
   }
 }
 
