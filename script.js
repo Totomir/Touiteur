@@ -35,7 +35,6 @@ function addTouit(msg, auth) {
   touit.appendChild(touitAuthor);
   touitSection.appendChild(touit);
   touitSection.prepend(touit);
-  touitForm.reset();
 }
 
 const timeSet = setInterval(function () {
@@ -44,11 +43,9 @@ const timeSet = setInterval(function () {
   request.addEventListener("readystatechange", function () {
     if (request.readyState === XMLHttpRequest.DONE) {
       const response = JSON.parse(request.responseText);
-      console.log(response);
       const object = response.messages;
 
-      for (let i = object.length - 100; i < object.length; i++) {
-        console.log(object[i].message);
+      for (let i = object.length - 10; i < object.length; i++) {
         let msg = object[i].message;
         let auth = object[i].name;
         addTouit(msg, auth);
@@ -83,3 +80,14 @@ submitButton.addEventListener("click", function () {
 
   touitForm.reset();
 });
+
+const trend = new XMLHttpRequest();
+trend.open("GET", "http://touiteur.cefim-formation.org/trending", true);
+trend.addEventListener("readystatechange", function () {
+  if (trend.readyState === XMLHttpRequest.DONE) {
+    const response = JSON.parse(trend.responseText);
+    console.log(response);
+  }
+});
+
+trend.send();
