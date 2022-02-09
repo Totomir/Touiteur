@@ -1,15 +1,8 @@
 body {
   position: relative;
-  /* background-image: url(../images/beautiful-shining-stars-night-sky_resultat.webp);
-  background-size: contain; */
+  background-image: url(../images/spaceSombre.png);
   background-color: #000000;
   font-family: "Bahnschrift";
-}
-
-p,
-h1,
-h2 {
-  color: white;
 }
 
 /* Header */
@@ -25,34 +18,22 @@ header {
   height: 40%;
 }
 
+.signinButton,
 .loginButton {
-  padding: 1rem;
-  text-decoration: none;
-  color: #979797;
-}
-
-.loginButton:hover {
-  padding: 1rem;
-  color: black;
-  background-color: #979797;
-  border: 1px solid #000000;
-  border-radius: 20px;
-}
-
-.signinButton {
-  margin-left: 1rem;
-  text-decoration: none;
-  color: #979797;
   margin-right: 1rem;
   padding: 1rem;
+  text-decoration: none;
+  color: #979797;
+  font-size: 13px;
 }
 
-.signinButton:hover {
-  padding: 1rem;
-  color: black;
+.signinButton:hover,
+.loginButton:hover {
   background-color: #979797;
   border: 1px solid #000000;
   border-radius: 20px;
+  padding: 1rem;
+  color: black;
 }
 
 @media screen and (min-width: 36em) {
@@ -78,20 +59,20 @@ header {
 
 /* Navigation bar */
 nav {
-  display: flex;
-  margin-top: 1rem;
-  flex-direction: column;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .pseudo {
   max-width: 150px;
+  margin-bottom: 1rem;
+  border-radius: 20px;
   font-size: 1.5rem;
   color: #979797;
-  border-radius: 20px;
-  margin-bottom: 1rem;
 }
 
 .message {
@@ -102,20 +83,20 @@ nav {
 
 .inputTouit {
   min-width: 27rem;
+  border-radius: 25px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border-radius: 25px;
 }
 
 .submitButton {
-  margin-left: 1rem;
-  margin-top: 1rem;
   max-height: 5rem;
   max-width: 5rem;
-  border-radius: 25px;
-  padding: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
   background-color: rgb(187, 187, 187);
+  border-radius: 25px;
   border: 1px solid black;
+  padding: 1rem;
 }
 
 @media screen and (min-width: 36em) {
@@ -141,7 +122,7 @@ nav {
   }
 }
 
-/* Section Touit */
+/* Touit Section */
 section {
   display: flex;
 }
@@ -166,52 +147,64 @@ section {
 }
 
 .touitText {
-  width: 75%;
   height: auto;
-  padding: 1rem;
+  text-align: center;
+  margin: auto;
   margin-bottom: 1rem;
+  background-color: #979797;
   border: 2px solid #979797;
   border-radius: 20px;
-  text-align: center;
+  padding: 1rem;
+  color: #000000;
+  word-break: break-all;
 }
 
 .touitosLogo {
   width: 5rem;
   height: 5rem;
-  padding: 0.5rem;
-  border-radius: 25px;
   background-color: #979797;
+  border-radius: 25px;
+  padding: 0.5rem;
 }
 
 .authorProfile {
   width: 75%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  margin-left: 5rem;
   font-size: 2rem;
   color: white;
 }
 
+.author {
+  margin-right: 2rem;
+}
+
+/* Top Touit Section */
 .topTouitSection {
   width: 45%;
+  text-align: center;
   margin-left: 7%;
   margin-right: 0%;
   padding: 2rem;
-  text-align: center;
+}
+
+.topTouitSection h2 {
+  color: white;
 }
 
 .topTouitTable {
-  display: flex;
-  flex-direction: column;
   min-width: 25rem;
   width: 90%;
+  display: flex;
+  flex-direction: column;
   margin-top: 2rem;
   margin-right: auto;
   margin-left: auto;
-  padding: 2rem;
   background-color: #979797;
   border: 1px solid #979797;
   border-radius: 20px;
+  padding: 2rem;
 }
 
 .trendingWord {
@@ -225,13 +218,13 @@ section {
 }
 
 .topTouitSpacer {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 2rem;
   margin-right: auto;
   margin-left: auto;
-  align-items: center;
 }
 
 .touitSpacer {

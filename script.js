@@ -39,8 +39,9 @@ function addTouit(name, message) {
 // Mise en place de la récupération des Touits
 
 // Mise en place d'une fonction refresh avec un timeOut permettant de réguler le nombre de requêtes
+// Avec la variable lastTimeStamp on peut réguler le nombre de touit afficher
 
-let lastTimeStamp = 0;
+let lastTimeStamp = 1644420000000;
 
 function refreshTouits() {
   const request = new XMLHttpRequest();
@@ -54,35 +55,30 @@ function refreshTouits() {
     if (request.readyState === XMLHttpRequest.DONE) {
       if (request.status === 200) {
         const response = JSON.parse(request.responseText);
-        touitSection.innerHTML = "";
+        lastTimeStamp = response.ts;
         const object = response.messages;
 
-        // Affichage des 100 derniers touits
-        for (let i = object.length - 100; i < object.length; i++) {
-          let message = object[i].message;
-          let name = object[i].name;
-          addTouit(name, message);
-        }
+        object.forEach((touit) => {
+          addTouit(touit.name, touit.message);
+        });
       } else {
         alert(
           "Erreur : la liste des touits n'a pu être récupérée ! Veuillez rééssayer plus tard ou contacter le service information."
         );
       }
-      setTimeout(refreshTouits, 5000);
+      setTimeout(refreshTouits, 3000);
     }
   });
+
   request.send();
 }
 
 refreshTouits();
 
-touitForm.addEventListener("click", function (ev) {
+// Mise en place permettant d'écrire des touits
+
+touitForm.addEventListener("submit", function (ev) {
   ev.preventDefault();
-
-  touit = touitForm["inputTouit"].value;
-  pseudo = profil.value;
-
-  console.log(touit);
 
   const request2 = new XMLHttpRequest();
   request2.open("POST", "http://touiteur.cefim-formation.org/send", true);
@@ -92,6 +88,7 @@ touitForm.addEventListener("click", function (ev) {
   );
   request2.addEventListener("readystatechange", function () {
     if (request2.readyState === XMLHttpRequest.DONE) {
+      // Mise en place de condition en fonction du status serveur
       if (request2.status === 200) {
         touitForm.message.value = "";
         alert("Touit envoyé !");
@@ -105,6 +102,7 @@ touitForm.addEventListener("click", function (ev) {
       }
     }
   });
+
   request2.send(
     "name=" +
       encodeURIComponent(touitForm.username.value) +
