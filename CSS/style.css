@@ -213,8 +213,12 @@ section {
   margin-bottom: 1rem;
 }
 
-.trendingWord p {
+.trendingWord span {
   margin: 1rem;
+}
+
+.trendingWord span::before {
+  content: "#";
 }
 
 .topTouitSpacer {
