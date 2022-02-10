@@ -1,5 +1,6 @@
-// Création d'une fonction souple que l'on peut utiliser avec plus ou moins de paramètres
+// Création de fonctions souples que l'on peut utiliser avec plus ou moins de paramètres
 
+// Fonction permettant la récupération de la list des touits
 function apiListTouits(
   timestamp = 1644420000000,
   onSuccess = () => {},
@@ -28,6 +29,7 @@ function apiListTouits(
   request.send();
 }
 
+// Fonction permettant d'envoyer un touit
 function apiSendTouit(name, message, onSuccess = () => {}, onError = () => {}) {
   const request2 = new XMLHttpRequest();
   request2.open("POST", "http://touiteur.cefim-formation.org/send", true);
@@ -54,9 +56,71 @@ function apiSendTouit(name, message, onSuccess = () => {}, onError = () => {}) {
   );
 }
 
+// Fonction permettant de faire apparaitre les termes tendances
 function apiGetTrending(onSuccess = () => {}, onError = () => {}) {
   const request = new XMLHttpRequest();
   request.open("GET", "http://touiteur.cefim-formation.org/trending", true);
+  request.addEventListener("readystatechange", function () {
+    if (request.readyState === XMLHttpRequest.DONE) {
+      if (request.status === 200) {
+        const response = JSON.parse(request.responseText);
+        onSuccess(response);
+      } else {
+        onError();
+      }
+    }
+  });
+  request.send();
+}
+
+// Fonction permettant de liker les touits
+function apiAddLike(id, onSuccess = () => {}, onError = () => {}) {
+  const request = new XMLHttpRequest();
+  request.open("PUT", "http://touiteur.cefim-formation.org/likes/send", true);
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  request.addEventListener("readystatechange", function () {
+    if (request.readyState === XMLHttpRequest.DONE) {
+      if (request.status === 200) {
+        const response = JSON.parse(request.responseText);
+        onSuccess(response);
+      } else {
+        onError(request);
+      }
+    }
+  });
+  request.send("message_id=" + encodeURIComponent(id));
+}
+
+// Fonction permettant de disliker les touits
+function apiRemoveLike(id, onSuccess = () => {}, onError = () => {}) {
+  const request = new XMLHttpRequest();
+  request.open(
+    "DELETE",
+    "http://touiteur.cefim-formation.org/likes/remove",
+    true
+  );
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  request.addEventListener("readystatechange", function () {
+    if (request.readyState === XMLHttpRequest.DONE) {
+      if (request.status === 200) {
+        const response = JSON.parse(request.responseText);
+        onSuccess(response);
+      } else {
+        onError(request);
+      }
+    }
+  });
+  request.send("message_id=" + encodeURIComponent(id));
+}
+
+// Fonction permettant de rafraichir
+function apiGetTouit(id, onSuccess = () => {}, onError = () => {}) {
+  const request = new XMLHttpRequest();
+  request.open(
+    "GET",
+    "http://touiteur.cefim-formation.org/get?id=" + encodeURIComponent(id),
+    true
+  );
   request.addEventListener("readystatechange", function () {
     if (request.readyState === XMLHttpRequest.DONE) {
       if (request.status === 200) {

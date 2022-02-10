@@ -5,6 +5,10 @@ body {
   font-family: "Bahnschrift";
 }
 
+h2 {
+  color: white;
+}
+
 /* Header */
 header {
   display: flex;
@@ -148,6 +152,8 @@ section {
 
 .touitText {
   height: auto;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
   margin: auto;
   margin-bottom: 1rem;
@@ -180,6 +186,17 @@ section {
   margin-right: 2rem;
 }
 
+.likeDislike {
+  margin-left: 2rem;
+}
+
+.likeDislike button {
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem;
+  border-radius: 100px;
+}
+
 /* Top Touit Section */
 .topTouitSection {
   width: 45%;
@@ -187,10 +204,6 @@ section {
   margin-left: 7%;
   margin-right: 0%;
   padding: 2rem;
-}
-
-.topTouitSection h2 {
-  color: white;
 }
 
 .topTouitTable {

@@ -14,6 +14,7 @@
     <header>
       <img src="images/Lune.png" alt="Touiteur's logo" class="logo" />
       <div class="buttons">
+        <!-- Boutons liés à l'authentification, mise en place ultérieur -->
         <a href="" class="loginButton">Connexion</a>
         <a href="" class="signinButton">Inscription</a>
       </div>
@@ -49,13 +50,34 @@
       </nav>
 
       <section>
-        <article class="touitSection" id="touitSection"></article>
+        <!-- Création d'un touit template pour tester les styles et la mise en page -->
+        <article class="touitSection" id="touitSection">
+          <h2>Chargement des touits...</h2>
+          <div class="odd">
+            <div class="touitText">
+              <p>Mon Touit</p>
+              <button>+</button>
+              <span>0</span>
+              <button>-</button>
+            </div>
+            <div class="authorProfile">
+              <div class="author">Moi</div>
+              <picture class="touitosLogo">
+                <img src="images/dog.png" alt="Dog" />
+              </picture>
+            </div>
+          </div>
+        </article>
+
+        <!-- Top touit section -->
         <article class="topTouitSection">
           <h2>Trends of the universe !</h2>
           <div class="topTouitTable">
-            <div class="trendingWord" id="trending-zone">
+            <!-- Top word -->
+            <div class="trendingWord" id="trendingZone">
               Chargement du trending...
             </div>
+            <!-- Top TouitSpacer -->
             <div class="topTouitSpacer">
               <picture class="touitosLogo">
                 <img src="images/dog.png" alt="Profil photo of AstroTouitos" />
